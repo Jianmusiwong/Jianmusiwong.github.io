@@ -1,0 +1,28 @@
+{
+  "config": {
+    "branch": "main",
+    "cname": " ",
+    "domain": "https://Jianmusiwong.github.io",
+    "email": "james954821@gmail.com",
+    "platform": "github",
+    "privateKey": "",
+    "repository": "Jianmusiwong.github.io",
+    "token": "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",
+    "username": "jianmusiwong"
+  },
+  "comment": {
+    "commentPlatform": "gitalk",
+    "disqusSetting": {
+      "api": "",
+      "apikey": "",
+      "shortname": ""
+    },
+    "gitalkSetting": {
+      "clientId": "",
+      "clientSecret": "",
+      "owner": "",
+      "repository": ""
+    },
+    "showComment": false
+  }
+}
