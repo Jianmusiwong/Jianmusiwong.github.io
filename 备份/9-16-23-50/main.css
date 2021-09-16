@@ -86,10 +86,7 @@
 }
 .project-name {
 	font-family: Rubik;
-	font-size: 30px;
-	text-decoration: none;
-	color: black;
- 
+	font-size: 30px; 
 }
 .project-description {
 	font-family: Rubik;
@@ -104,9 +101,6 @@
 	float: left;
 	margin-bottom: 40px;
 	max-width: 500px;
-	text-decoration: none;
-	color: black;
-
 }
 .introduction-sideprojects {
 	font-family: Rubik;
@@ -131,7 +125,6 @@
 	text-align: center;
 	color: black; 
 }
-
 .license {
 	font-family: Rubik;
   	font-size: 19px;
