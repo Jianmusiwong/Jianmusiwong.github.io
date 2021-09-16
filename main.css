@@ -7,21 +7,41 @@
 	font-family: Rubik-i;
 	src: url(font/Rubik-Italic-VariableFont_wght.ttf);
 }
-.container {
+
+
+
+
+
+.container-main {
 	min-width: 500px ;
 	width: 100%;
 	height: 100%;
+
 }
 .main {
-	width:75%;
+	width:95%;
 	margin: auto;
 }
 .header {
-	display:center
+	display: flex;
+	align-items: center;
+	justify-content:space-around;
+	width: 100%;
+	align-self: center;
+	margin: auto;
 }
 .center {
 	display:center
 }
+
+
+
+
+
+
+
+
+
 .title-website {
 	font-family: Rubik;
   	font-size: 40px; 
@@ -36,18 +56,41 @@
 	max-width: 600px;
 }
 
-.menu-left {
+.menu-resume {
 	font-family: Rubik;
-  	font-size: 20px; 
+  	font-size: 20px;
+	text-align: center;
+	margin: 20px;
 }
-.menu-left-name {
+.menu-name {
 	font-family: Rubik;
-  	font-size: 20px; 
+  	font-size: 20px;
+	text-align: center;
+	margin: 20px;
+ 
 }
-.avatar img {
-	width:100%;
-	max-width:400px;
-	float: right;
-	min-width:200px ;
+.project-name {
+	font-family: Rubik;
+	font-size: 30px; 
+}
+.project-description {
+	font-family: Rubik;
+	font-size: 18px;
+	margin-bottom: 30px;
 }
 
+
+
+
+
+.avatar img {
+	width:100%;
+	max-width:350px;
+	float: right;
+	min-width:100px ;
+}
+.project-img img {
+	width: 100%;
+	max-height: 410px;
+	margin-bottom: 30px;
+}
