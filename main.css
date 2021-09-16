@@ -1,0 +1,53 @@
+@font-face {
+	font-family: Rubik;
+	src: url(font/Rubik-VariableFont_wght.ttf);
+}
+
+@font-face {
+	font-family: Rubik-i;
+	src: url(font/Rubik-Italic-VariableFont_wght.ttf);
+}
+.container {
+	min-width: 500px ;
+	width: 100%;
+	height: 100%;
+}
+.main {
+	width:75%;
+	margin: auto;
+}
+.header {
+	display:center
+}
+.center {
+	display:center
+}
+.title-website {
+	font-family: Rubik;
+  	font-size: 40px; 
+	text-align: left;
+	min-width: 250px;
+	float: left;
+}
+.introduction {
+	font-family: Rubik;
+	font-size: 20px;
+	text-align: left;
+	max-width: 600px;
+}
+
+.menu-left {
+	font-family: Rubik;
+  	font-size: 20px; 
+}
+.menu-left-name {
+	font-family: Rubik;
+  	font-size: 20px; 
+}
+.avatar img {
+	width:100%;
+	max-width:400px;
+	float: right;
+	min-width:200px ;
+}
+
