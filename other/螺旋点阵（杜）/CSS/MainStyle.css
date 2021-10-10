@@ -1,0 +1,16 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+#main {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
