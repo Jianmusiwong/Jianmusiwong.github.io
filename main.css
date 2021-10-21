@@ -12,23 +12,6 @@
 /* 页面主体设置  */
 
 
-@font-face {
-  font-family: OPPOSans-R;
-  src: url(font/OPPOSans-R.ttf);
-}
-
-@font-face {
-  font-family: OPPOSans-M;
-  src:url(/font/OPPOSans-R.ttf);
-  
-}
-@font-face {
-  font-family: OPPOSans-B;
-  src:url(/font/OPPOSans-B.ttf);
-  
-}
-/* 字体 */
-
 
 h1,
 h2,
@@ -56,8 +39,8 @@ h1 {
 h2 {
   font-size: 27PX;
   margin-top: 6rem;
-  font-family: OPPOSans-M;
-  font-weight: 800;
+  font-family: OPPOSans-B;
+  font-weight: 500;
 }
 
 h3 {
@@ -83,12 +66,7 @@ hr {
 /* 分隔线 */
 
 
-img {
-  max-width: 100%;
-}
 
-
-/* 图片 */
 
 
 
@@ -121,8 +99,8 @@ img {
 
 
 p {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 1em;
+
 }
 /* 段落 */
 
@@ -140,7 +118,7 @@ p {
 	src: url(font/OPPOSans-L.ttf);
 }
 @font-face {
-	font-family: OPPOSans;
+	font-family: OPPOSans-R;
 	src: url(font/OPPOSans-R.ttf);
 }
 @font-face {
@@ -150,6 +128,10 @@ p {
 @font-face {
 	font-family: OPPOSans-b;
 	src: url(font/OPPOSans-b.ttf);
+}
+@font-face {
+	font-family: OPPOSans-H;
+	src: url(font/OPPOSans-H.ttf);
 }
 
 .projectbody {
@@ -182,6 +164,16 @@ p {
 	height: 60px;
   top: 0%;
 	background-color:white;
+	box-shadow:0px 0px 8px #f2f2f2;
+
+}
+.header-red {
+	width: 100%;
+	margin: auto;
+	position: fixed;
+	height: 60px;
+  top: 0%;
+	background-color:#d55353;
 	box-shadow:0px 0px 8px #f2f2f2;
 
 }
@@ -239,55 +231,100 @@ p {
   line-height: 150%;
 }
 .introduction {
-	font-family: OPPOSans;
+	font-family: OPPOSans-r;
 	font-size: 20px;
 	text-align: left;
 	max-width: 600px;
   line-height: 150%;
 }
 
+
+
+_____
+_____
+______
+
+
 .menu-link1 {
-	font-family: OPPOSans;
-  	font-size: 20px;
+	font-family: OPPOSans-h;
+  font-size: 20px;
 	text-align: center;
 	margin: 20px;
 	margin-left: 40px;
 	color: black; 
 	text-decoration: none;
 	float: left;
+  align-self: center;
+  font-weight: 900;
  
 }
+
+.menu-link1-red {
+	font-family: OPPOSans-h;
+  font-size: 20px;
+	text-align: center;
+	margin: 20px;
+	margin-left: 40px;
+	color: white; 
+	text-decoration: none;
+	float: left;
+  align-self: center;
+  font-weight: 900;
+ 
+}
+
 .menu-link2 {
-	font-family: OPPOSans;
+	font-family: OPPOSans-r;
   	font-size: 20px;
 	text-align: center;
 	margin: 20px;
 	margin-right: 40px;
-	color: black; 
+	color: #8a8a8a; 
 	text-decoration: none;
 	float: right;
- 
+  align-self: center;
 }
+
+.menu-link2-red {
+	font-family: OPPOSans-r;
+  	font-size: 20px;
+	text-align: center;
+	margin: 20px;
+	margin-right: 40px;
+	color: white; 
+	text-decoration: none;
+	float: right;
+  align-self: center;
+}
+
+
+
+
+
+
+
+
 .section-name {
-	font-family: OPPOSans;
+	font-family: OPPOSans-r;
 	font-size: 30px;
 	opacity: 20%;
 	margin-bottom: 30px;
 }
 .project-name {
-	font-family: OPPOSans;
+	font-family: OPPOSans-m;
 	font-size: 30px;
 	text-decoration: none;
 	color: black;
  
 }
 .project-description {
-	font-family: OPPOSans;
+	font-family: OPPOSans-r;
 	font-size: 18px;
 	margin-bottom: 30px;
+  max-width: 550px;
 }
 .title-sideprojects {
-	font-family: OPPOSans;
+	font-family: OPPOSans-m;
   	font-size: 30px; 
 	text-align: left;
 	min-width: 250px;
@@ -299,7 +336,7 @@ p {
 
 }
 .introduction-sideprojects {
-	font-family: OPPOSans;
+	font-family: OPPOSans-r;
 	font-size: 20px;
 	text-align: left;
 	max-width: 500px;
@@ -307,7 +344,7 @@ p {
 
 
 .footer-link {
-	font-family: OPPOSans;
+	font-family: OPPOSans-r;
   	font-size: 20px;
 	text-align: center;
 	margin: 20px;
@@ -316,14 +353,16 @@ p {
 }
 
 .project-link {
-	font-family: OPPOSans;
+	font-family: OPPOSans-m;
   	font-size: 20px;
 	text-align: center;
 	color: black; 
+  text-decoration: none;
+
 }
 
 .license {
-	font-family: OPPOSans;
+	font-family: OPPOSans-r;
   	font-size: 19px;
 	color: white;
 	justify-content: center;
@@ -357,6 +396,7 @@ height:31px;
 border-radius:25px;
 text-align: center;
 margin: 10px;
+color: rgb(0, 0, 0);
 
 }
 /* 关键词 */
@@ -381,7 +421,16 @@ margin: 10px;
 	width: 100%;
 	max-width: 550px;
 	margin-bottom: 30px;
+  border:0.5px solid black;
+
 }
+
+
+/* .project-img {
+  border-width: 1px;
+  border-color: black;
+} */
+
 .sideprojects-img img {
 	width:100%;
 	max-width:550px;
@@ -389,9 +438,18 @@ margin: 10px;
 	min-width:100px ;
 }
 
+
+
 .image {
   margin-bottom: 20px;
   border-radius: 0;
   text-align: center;
 }
+img {
+    max-width: 100%;
+}
+figure {
+        margin: 0;
+}
+
 /* 文章插图 */
