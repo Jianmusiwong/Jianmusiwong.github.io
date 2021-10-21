@@ -240,16 +240,14 @@ p {
 
 
 
-_____
-_____
-______
+
 
 
 .menu-link1 {
 	font-family: OPPOSans-h;
   font-size: 20px;
 	text-align: center;
-	margin: 20px;
+	margin-top: 18px;
 	margin-left: 40px;
 	color: black; 
 	text-decoration: none;
@@ -259,43 +257,21 @@ ______
  
 }
 
-.menu-link1-red {
-	font-family: OPPOSans-h;
-  font-size: 20px;
-	text-align: center;
-	margin: 20px;
-	margin-left: 40px;
-	color: white; 
-	text-decoration: none;
-	float: left;
-  align-self: center;
-  font-weight: 900;
- 
-}
+
 
 .menu-link2 {
-	font-family: OPPOSans-r;
+	font-family: OPPOSans-l;
   	font-size: 20px;
 	text-align: center;
-	margin: 20px;
+	margin-top: 18px;
 	margin-right: 40px;
-	color: #8a8a8a; 
+	color: black; 
 	text-decoration: none;
 	float: right;
   align-self: center;
 }
 
-.menu-link2-red {
-	font-family: OPPOSans-r;
-  	font-size: 20px;
-	text-align: center;
-	margin: 20px;
-	margin-right: 40px;
-	color: white; 
-	text-decoration: none;
-	float: right;
-  align-self: center;
-}
+
 
 
 
@@ -421,15 +397,18 @@ color: rgb(0, 0, 0);
 	width: 100%;
 	max-width: 550px;
 	margin-bottom: 30px;
-  border:0.5px solid black;
+  border:1px solid rgba(0, 0, 0, 0.105);
+
 
 }
 
+.img-border {
+  border:1px solid rgba(0, 0, 0, 0.105);
+}
+/* 给图片加边框 */
 
-/* .project-img {
-  border-width: 1px;
-  border-color: black;
-} */
+
+
 
 .sideprojects-img img {
 	width:100%;
@@ -437,7 +416,6 @@ color: rgb(0, 0, 0);
 	float: right;
 	min-width:100px ;
 }
-
 
 
 .image {
@@ -453,3 +431,19 @@ figure {
 }
 
 /* 文章插图 */
+
+
+
+.red-background {
+  background-color: #d55353;
+}
+
+.gray-font {
+  color: gray;
+}
+
+.white-font {
+  color: white;
+}
+
+/* 颜色样式 */
