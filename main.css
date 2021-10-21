@@ -156,9 +156,10 @@ p {
   max-width: 1220px;
   min-width: 400px;
   margin: auto;
-  line-height: 1.5;
+  line-height: 1.6;
   font-size: 21px;
-  font-family: OPPOSANS-L;
+  font-family: OPPOSANS-R;
+  color: rgb(0, 0, 0);
 
 }
 
@@ -349,7 +350,25 @@ p {
 }
 
 
+.keyword {
+background: rgba(0, 0, 0, 0.100);
+width:120px;
+height:31px;
+border-radius:25px;
+text-align: center;
+margin: 10px;
 
+}
+/* 关键词 */
+
+.column-list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.column {
+  min-width: 120px;
+}
 
 
 .avatar img {
