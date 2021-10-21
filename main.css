@@ -361,13 +361,13 @@
 
 
 @font-face {
-	font-family: Rubik;
-	src: url(font/Rubik-VariableFont_wght.ttf);
+	font-family: OPPOSans;
+	src: url(font/OPPOSans-R.ttf);
 }
 
 @font-face {
-	font-family: Rubik-i;
-	src: url(font/Rubik-Italic-VariableFont_wght.ttf);
+	font-family: OPPOSans-M;
+	src: url(font/OPPOSans-M.ttf);
 }
 
 
@@ -431,22 +431,32 @@
 
 
 
-.title-website {
-	font-family: Rubik;
-  	font-size: 40px; 
+.title-website1 {
+	font-family: OPPOSans-M;
+  font-size: 40px; 
 	text-align: left;
 	min-width: 250px;
 	float: left;
+  line-height: 150%;
+}
+.title-website2 {
+	font-family: OPPOSans-M;
+  font-size: 20px; 
+	text-align: left;
+	min-width: 250px;
+	float: left;
+  line-height: 150%;
 }
 .introduction {
-	font-family: Rubik;
+	font-family: OPPOSans;
 	font-size: 20px;
 	text-align: left;
 	max-width: 600px;
+  line-height: 150%;
 }
 
 .menu-link1 {
-	font-family: Rubik;
+	font-family: OPPOSans;
   	font-size: 20px;
 	text-align: center;
 	margin: 20px;
@@ -457,7 +467,7 @@
  
 }
 .menu-link2 {
-	font-family: Rubik;
+	font-family: OPPOSans;
   	font-size: 20px;
 	text-align: center;
 	margin: 20px;
@@ -468,25 +478,25 @@
  
 }
 .section-name {
-	font-family: Rubik;
+	font-family: OPPOSans;
 	font-size: 30px;
 	opacity: 20%;
 	margin-bottom: 30px;
 }
 .project-name {
-	font-family: Rubik;
+	font-family: OPPOSans;
 	font-size: 30px;
 	text-decoration: none;
 	color: black;
  
 }
 .project-description {
-	font-family: Rubik;
+	font-family: OPPOSans;
 	font-size: 18px;
 	margin-bottom: 30px;
 }
 .title-sideprojects {
-	font-family: Rubik;
+	font-family: OPPOSans;
   	font-size: 30px; 
 	text-align: left;
 	min-width: 250px;
@@ -498,7 +508,7 @@
 
 }
 .introduction-sideprojects {
-	font-family: Rubik;
+	font-family: OPPOSans;
 	font-size: 20px;
 	text-align: left;
 	max-width: 500px;
@@ -506,7 +516,7 @@
 
 
 .footer-link {
-	font-family: Rubik;
+	font-family: OPPOSans;
   	font-size: 20px;
 	text-align: center;
 	margin: 20px;
@@ -515,14 +525,14 @@
 }
 
 .project-link {
-	font-family: Rubik;
+	font-family: OPPOSans;
   	font-size: 20px;
 	text-align: center;
 	color: black; 
 }
 
 .license {
-	font-family: Rubik;
+	font-family: OPPOSans;
   	font-size: 19px;
 	color: white;
 	justify-content: center;
