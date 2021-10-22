@@ -44,7 +44,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 21PX;
   margin-top: 1.25rem;
   font-family: OPPOSans-B;
 }
@@ -352,7 +352,7 @@ width:120px;
 height:31px;
 border-radius:25px;
 text-align: center;
-margin: 10px;
+margin: 5px;
 color: rgb(0, 0, 0);
 
 }
@@ -400,7 +400,8 @@ color: rgb(0, 0, 0);
 
 
 .image {
-  margin-bottom: 20px;
+	margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 0;
   text-align: center;
 }
@@ -415,10 +416,16 @@ figure {
 
 
 
+
+
+
+
 .red-background {
   background-color: #f0797c;
 }
-
+.red-font {
+	color:#f0797c
+}
 .gray-font {
   color: gray;
 }
