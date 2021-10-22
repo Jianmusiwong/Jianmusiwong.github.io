@@ -145,6 +145,17 @@ p {
 
 }
 
+.projectbody-wider {
+	max-width: 1500px;
+	min-width: 400px;
+	margin: auto;
+	line-height: 1.6;
+	font-size: 21px;
+	font-family: OPPOSANS-R;
+	color: rgb(0, 0, 0);
+  
+  }
+
 .container-main {
 	min-width: 500px ;
 	width: 100%;
@@ -326,6 +337,14 @@ p {
 	flex-direction: row; 
 	opacity: 70%;
 }
+.jump-link {
+	font-family: OPPOSans-r;
+  	font-size: 20px;
+	color: rgb(0, 0, 0); 
+	text-decoration: none;
+
+}
+
 .projecttitle {
   font-family: OPPOSans-B;
   font-size: 46px; 
@@ -405,9 +424,18 @@ color: rgb(0, 0, 0);
   border-radius: 0;
   text-align: center;
 }
+.image-margin {
+	margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 0;
+  text-align: center;
+}
+
 img {
     max-width: 100%;
 }
+
+
 figure {
         margin: 0;
 }
@@ -434,4 +462,10 @@ figure {
   color: white;
 }
 
+.blue-background {
+	background-color: #e8f0f9;
+}
+.black-font {
+	color: black;
+}
 /* 颜色样式 */

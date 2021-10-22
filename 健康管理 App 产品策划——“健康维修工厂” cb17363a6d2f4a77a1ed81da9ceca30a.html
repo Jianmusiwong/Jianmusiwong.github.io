@@ -1,0 +1,1099 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>健康管理 App 产品策划——“健康维修工厂”</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			text-indent: -1.7em;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(145, 145, 142, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(187, 132, 108, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(215, 129, 58, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 148, 51, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(108, 155, 125, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(91, 151, 189, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(167, 130, 195, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(205, 116, 159, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(225, 111, 100, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(145, 145, 142, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(187, 132, 108, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(215, 129, 58, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 148, 51, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(108, 155, 125, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(91, 151, 189, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(167, 130, 195, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(205, 116, 159, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(225, 111, 100, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+
+
+<body>
+	<article id="82f507c4-8397-4471-bc26-3ff351db7ca7" class="page sans">
+		<header>
+			<h1 class="page-title">健康管理 App 产品策划——“健康维修工厂”</h1>
+		</header>
+		<div class="page-body">
+			<figure id="cb17363a-6d2f-4a77-a1ed-81da9ceca30a" class="image"><a
+					href="project2/Untitled.png"><img
+						style="width:15625px"
+						src="project2/Untitled.png" /></a>
+			</figure>
+			<p id="4ff6a026-921f-46c0-bfc0-bd15256d9ea0" class="">产品策划、文档撰写、原型图、BRD+MRD+PRD</p>
+			<h2 id="340e87ef-4dd3-4a6a-bcc4-24993c52af4d" class="">简单介绍下</h2>
+			<p id="d1bc50c6-c9df-4a04-8205-1f9fa81d6482" class="">
+				“健康维修工厂”是一款面向白领群体的个人健康管理工具。以日常健康自检、症状追踪记录为基本功能，作为提醒者，潜在健康隐患。产品加入冥想指引、白噪音功能，响应白领群体舒缓焦虑的内在需求，引导用户逐步建立健康管理意识。
+			</p>
+			<h2 id="c959f920-c1b7-4d38-b5de-7832c9d9b291" class="">产品创新点</h2>
+			<p id="fedceebd-1aee-4a06-90b6-9a71e6152247" class="">提出把冥想与健康隐患自我排查结合，作为冥想在国内的本土化策略。</p>
+			<p id="de3e40a6-4f13-4f22-a2a3-30271ba4c3e9" class="">
+				在初期，产品以工具型产品这种大众眼里更“切合实际”的形式出现，以期在国内逐步培养起更多“健康生活方式”、冥想内容受众。后期发展成年轻化的健康生活方式、心理健康交流社区。</p>
+			<h2 id="20aa4ed5-a8e4-4cb2-a241-ebe20cf73786" class="">时长</h2>
+			<p id="3b1ca976-4c30-413b-973a-0e591c563cad" class="">2 个月（2020.05~2020.06）</p>
+			<h2 id="bb3e5c41-d3b9-46f7-92a4-7e5fabce09ca" class="">有哪些成果</h2>
+			<figure id="7e9676ef-91ba-4f31-87c4-a8833a4691d6" class="image"><a
+					href="project2/Untitled%201.png"><img
+						style="width:15625px"
+						src="project2/Untitled%201.png" /></a>
+			</figure>
+			<figure id="3c3ba207-0a0e-45c9-a373-1bc546e045ba" class="image"><a
+					href="project2/Untitled%202.png"><img
+						style="width:15625px"
+						src="project2/Untitled%202.png" /></a>
+			</figure>
+			<figure id="8d2db095-28ce-4a91-ab7c-25f20786cb75" class="image"><a
+					href="project2/Untitled%203.png"><img
+						style="width:15625px"
+						src="project2/Untitled%203.png" /></a>
+			</figure>
+			<figure id="3fe05e42-5be9-4af9-b592-4d79cf16d118" class="image"><a
+					href="project2/Untitled%204.png"><img
+						style="width:15625px"
+						src="project2/Untitled%204.png" /></a>
+			</figure>
+			<figure id="1b9db3e8-a188-4750-85ee-9921d22db3b9" class="image"><a
+					href="project2/Untitled%205.png"><img
+						style="width:15625px"
+						src="project2/Untitled%205.png" /></a>
+			</figure>
+			<figure id="d6a3147e-1527-49e6-a8eb-f4ba368eee4e" class="image"><a
+					href="project2/Untitled%206.png"><img
+						style="width:15625px"
+						src="project2/Untitled%206.png" /></a>
+			</figure>
+			<figure id="cf5e8168-98d7-40b9-959d-ddfcc9f71a98" class="image"><a
+					href="project2/Untitled%207.png"><img
+						style="width:15625px"
+						src="project2/Untitled%207.png" /></a>
+			</figure>
+			<figure id="1fb4474e-5cbd-4db4-8edf-182e40755c56" class="image"><a
+					href="project2/Untitled%208.png"><img
+						style="width:15625px"
+						src="project2/Untitled%208.png" /></a>
+			</figure>
+			<figure id="27a859b7-172a-4b95-bef5-3edd589b6ba0" class="image"><a
+					href="project2/Untitled%209.png"><img
+						style="width:15625px"
+						src="project2/Untitled%209.png" /></a>
+			</figure>
+			<figure id="9b33cb03-a13e-46b5-884f-11d84ff3e93e" class="image"><a
+					href="project2/Untitled%2010.png"><img
+						style="width:15625px"
+						src="project2/Untitled%2010.png" /></a>
+			</figure>
+			<figure id="e3c4ba3e-f215-4abc-99d9-f53969548278" class="image"><a
+					href="project2/Untitled%2011.png"><img
+						style="width:15625px"
+						src="project2/Untitled%2011.png" /></a>
+			</figure>
+			<p id="2e23833f-bdc0-428d-8c5f-c9f04f3394ea" class="">
+			</p>
+			<p id="a05f4235-e116-4daa-9de0-0421676cce23" class="">
+			</p>
+			<p id="2026fee8-9992-4629-a848-87c410e94834" class="">
+			</p>
+			<h2 id="40de41da-7fcd-4dbf-89cb-e95ffeedd1e8" class="">MRD</h2>
+			<div id="064a5375-9dda-444d-8520-6b34e89e4f3d" class="column-list">
+				<div id="49f208ac-6285-4b2c-8fcc-481c7b2d541f" style="width:50%" class="column">
+					<figure id="29eb2ac0-10f0-4ab1-8e3d-cec47fcf938e" class="image"><a
+							href="project2/img.jpg"><img
+								style="width:2479px"
+								src="project2/img.jpg" /></a>
+					</figure>
+				</div>
+				<div id="d5213fef-f4c2-4fdc-ba21-e558e6c63758" style="width:50%" class="column">
+					<figure id="75abaa99-1fcd-4d7a-83eb-854a43e67aeb" class="image"><a
+							href="project2/img_2.jpg"><img
+								style="width:2479px"
+								src="project2/img_2.jpg" /></a>
+					</figure>
+				</div>
+			</div>
+			<div id="bc3136d8-1284-4638-b060-fd5c0a557c15" class="column-list">
+				<div id="4f9ea9ac-85b5-4366-98d8-29a768d70611" style="width:50%" class="column">
+					<figure id="5fe4b5e3-7c33-49df-a7c5-c90676837f97" class="image"><a
+							href="project2/img_3.jpg"><img
+								style="width:2479px"
+								src="project2/img_3.jpg" /></a>
+					</figure>
+				</div>
+				<div id="92ac57e9-daaa-475b-b8bc-23c4102f0bd0" style="width:50%" class="column">
+					<figure id="87dd3cb6-5bdc-4a5b-91eb-a77e452111e8" class="image"><a
+							href="project2/img_4.jpg"><img
+								style="width:2479px"
+								src="project2/img_4.jpg" /></a>
+					</figure>
+				</div>
+			</div>
+			<div id="d80cc715-bf7c-4d28-821d-c2bfc994080c" class="column-list">
+				<div id="65cf85ef-37a6-4d12-93b8-3c966d4bf68a" style="width:50%" class="column">
+					<figure id="52f43901-6ad6-4bf1-952f-9f29c40db44e" class="image"><a
+							href="project2/img_5.jpg"><img
+								style="width:2479px"
+								src="project2/img_5.jpg" /></a>
+					</figure>
+				</div>
+				<div id="67f0838b-60cf-4dfa-bcf8-524d14ec9e81" style="width:50%" class="column">
+					<figure id="78b1ce3e-6346-4871-81c4-1dc636f02605" class="image"><a
+							href="project2/img_6.jpg"><img
+								style="width:2479px"
+								src="project2/img_6.jpg" /></a>
+					</figure>
+				</div>
+			</div>
+			<div id="0ba4a7f2-de56-4a59-a06a-aaf70f2cc4c4" class="column-list">
+				<div id="f78afa7d-ce29-48fd-b0da-a8e878d98c94" style="width:50%" class="column">
+					<figure id="442cc21f-ee6f-43f7-9606-a796565fc31e" class="image"><a
+							href="project2/img_7.jpg"><img
+								style="width:2479px"
+								src="project2/img_7.jpg" /></a>
+					</figure>
+				</div>
+				<div id="5ed6dd1b-e57e-453a-9487-b4baa4c8bd96" style="width:50%" class="column">
+					<figure id="b60fcdb2-d8ad-4e51-9b78-56936bc249db" class="image"><a
+							href="project2/img_8.jpg"><img
+								style="width:2479px"
+								src="project2/img_8.jpg" /></a>
+					</figure>
+				</div>
+			</div>
+			<div id="7eb02dea-408c-4049-bf1a-d6ba50a9c13e" class="column-list">
+				<div id="88152110-6fa4-4240-beb7-fecb767f3eb9" style="width:50%" class="column">
+					<figure id="be9a23c7-724f-4933-9324-baf49b0a7d5f" class="image"><a
+							href="project2/img_9.jpg"><img
+								style="width:2479px"
+								src="project2/img_9.jpg" /></a>
+					</figure>
+				</div>
+				<div id="0f27f002-e723-43e6-aa16-925cceb6afab" style="width:50%" class="column">
+					<figure id="6aaec0e2-596d-4e66-a4d0-e2b36e37603a" class="image"><a
+							href="project2/img_10.jpg"><img
+								style="width:2479px"
+								src="project2/img_10.jpg" /></a>
+					</figure>
+				</div>
+			</div>
+			<div id="fc7ca3fb-4286-427e-a4e9-3715a5491de0" class="column-list">
+				<div id="3345b901-271e-4626-aa99-e2066a7e09cd" style="width:50%" class="column">
+					<figure id="06a59c33-24b2-4615-a95c-edd68c41da16" class="image"><a
+							href="project2/img_11.jpg"><img
+								style="width:2479px"
+								src="project2/img_11.jpg" /></a>
+					</figure>
+				</div>
+				<div id="f9fc4fcc-a801-4ce4-9e9d-0d1833a69ee1" style="width:50%" class="column">
+					<figure id="c698805a-45c1-4183-908f-b777a5a43d3d" class="image"><a
+							href="project2/img_12.jpg"><img
+								style="width:2479px"
+								src="project2/img_12.jpg" /></a>
+					</figure>
+				</div>
+			</div>
+			<div id="b742e37f-6fde-44e0-93d6-8d70bcd8485e" class="column-list">
+				<div id="6e480d84-2a31-4bbe-b167-5691c8bf022e" style="width:50%" class="column">
+					<figure id="ba226215-7015-4c8b-821f-bfa87300294b" class="image"><a
+							href="project2/img_13.jpg"><img
+								style="width:2479px"
+								src="project2/img_13.jpg" /></a>
+					</figure>
+				</div>
+				<div id="d45503c4-8ef4-4b56-91a9-064187e697e2" style="width:50%" class="column">
+					<figure id="ae984cb3-964d-462c-98f4-024cffd93174" class="image"><a
+							href="project2/img_14.jpg"><img
+								style="width:2479px"
+								src="project2/img_14.jpg" /></a>
+					</figure>
+				</div>
+			</div>
+			<div id="61a8bf00-e73f-465a-9082-b26d9c9eb664" class="column-list">
+				<div id="e4e008d6-a931-4372-8656-c774b805134c" style="width:50%" class="column">
+					<figure id="0110a570-3fce-4944-8935-2b7157467c25" class="image"><a
+							href="project2/img_15.jpg"><img
+								style="width:2479px"
+								src="project2/img_15.jpg" /></a>
+					</figure>
+					<figure id="070e761a-12aa-44e0-ab5e-eab943580611" class="image"><a
+							href="project2/img_17.jpg"><img
+								style="width:2479px"
+								src="project2/img_17.jpg" /></a>
+					</figure>
+				</div>
+				<div id="e0a47036-a9dd-430c-a075-95b406ed98de" style="width:50%" class="column">
+					<figure id="6dd7ec7c-9ee2-4474-94e7-1dd5ef990103" class="image"><a
+							href="project2/img_16.jpg"><img
+								style="width:2479px"
+								src="project2/img_16.jpg" /></a>
+					</figure>
+				</div>
+			</div>
+			<p id="f436f9f1-5e10-49e5-b885-1c937d6526b3" class="">
+			</p>
+			<h2 id="17f091b2-8043-4004-b3e2-e3990b61b406" class="">BRD</h2>
+			<figure id="19e81a52-1843-4e42-b036-3b9ff1ee5e04" class="image"><a
+					href="project2/BRD.jpg"><img
+						style="width:8000px"
+						src="project2/BRD.jpg" /></a>
+			</figure>
+			<figure id="86385cd2-da54-49e5-9071-23308e100aca" class="image"><a
+					href="project2/BRD_2.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_2.jpg" /></a>
+			</figure>
+			<figure id="3a782af7-e3e5-4570-8d66-e39712795a33" class="image"><a
+					href="project2/BRD_3.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_3.jpg" /></a>
+			</figure>
+			<figure id="b74408f1-fd6b-41b7-a17e-89b5ea722c10" class="image"><a
+					href="project2/BRD_4.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_4.jpg" /></a>
+			</figure>
+			<figure id="8e5a9800-8858-48c7-b5fc-73cf56129d1a" class="image"><a
+					href="project2/BRD_5.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_5.jpg" /></a>
+			</figure>
+			<figure id="7c1eb80f-8a57-4423-a598-0a5721fdfbea" class="image"><a
+					href="project2/BRD_6.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_6.jpg" /></a>
+			</figure>
+			<figure id="8a949ce6-13a6-47bb-9ffd-a86ea869b30c" class="image"><a
+					href="project2/BRD_7.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_7.jpg" /></a>
+			</figure>
+			<figure id="c23a1677-87de-4d23-a386-cc2c33dca4ac" class="image"><a
+					href="project2/BRD_8.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_8.jpg" /></a>
+			</figure>
+			<figure id="5ef516f4-e406-479f-a5cc-c26f575ac160" class="image"><a
+					href="project2/BRD_9.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_9.jpg" /></a>
+			</figure>
+			<figure id="c8c32d41-6239-4930-985b-fddee6f5a402" class="image"><a
+					href="project2/BRD_10.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_10.jpg" /></a>
+			</figure>
+			<figure id="f20f2e54-a7d3-43ff-8b2b-d232862c7e8a" class="image"><a
+					href="project2/BRD_11.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_11.jpg" /></a>
+			</figure>
+			<figure id="81fbc1db-04da-4541-af68-a45f9368ac91" class="image"><a
+					href="project2/BRD_12.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_12.jpg" /></a>
+			</figure>
+			<figure id="cb4238b0-d29f-42f8-9e92-8c585689560e" class="image"><a
+					href="project2/BRD_13.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_13.jpg" /></a>
+			</figure>
+			<figure id="c40370bd-32d9-42e2-b198-bb36c7e19034" class="image"><a
+					href="project2/BRD_14.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_14.jpg" /></a>
+			</figure>
+			<figure id="3b817bb1-cefc-4f41-b880-16e34acce279" class="image"><a
+					href="project2/BRD_15.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_15.jpg" /></a>
+			</figure>
+			<figure id="3aa9439a-466c-49a5-a308-35b027e65804" class="image"><a
+					href="project2/BRD_16.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_16.jpg" /></a>
+			</figure>
+			<figure id="ab41df56-cac5-4bfa-835f-9b388d1ddc2c" class="image"><a
+					href="project2/BRD_17.jpg"><img
+						style="width:8000px"
+						src="project2/BRD_17.jpg" /></a>
+			</figure>
+			<p id="e6a5ebe5-d83b-4878-a630-b4a976c41bb7" class="">
+			</p>
+			<p id="3e4410ce-0bd5-4ba2-9d10-cf0fc6ba639d" class="">
+			</p>
+			<hr id="ca5763ce-98de-4050-9310-7b7e0aa124c1" />
+			<p id="8466e32c-2471-4964-8d20-aa77a088d972" class="">文章结束啦，想必有很多亟需改进的地方，多谢包涵噢💐</p>
+			<p id="caf2dd05-f493-45a5-b70f-50c05a73be88" class="">有任何想法或宝贵建议，都欢迎联系我哇🤝</p>
+			<p id="7b61d510-756f-40f7-8773-f1ed25e15aad" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>
