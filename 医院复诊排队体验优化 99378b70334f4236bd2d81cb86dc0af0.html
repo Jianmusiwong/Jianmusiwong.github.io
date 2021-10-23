@@ -1,0 +1,1074 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>医院复诊排队体验优化</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			text-indent: -1.7em;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(145, 145, 142, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(187, 132, 108, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(215, 129, 58, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 148, 51, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(108, 155, 125, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(91, 151, 189, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(167, 130, 195, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(205, 116, 159, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(225, 111, 100, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(145, 145, 142, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(187, 132, 108, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(215, 129, 58, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 148, 51, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(108, 155, 125, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(91, 151, 189, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(167, 130, 195, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(205, 116, 159, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(225, 111, 100, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="9da15370-91c5-44f1-a06c-d19f6fdfe902" class="page sans">
+		<header>
+			<h1 class="page-title">医院复诊排队体验优化</h1>
+		</header>
+		<div class="page-body">
+			<p id="00ee7233-ca75-438c-b52b-858fad8642b2" class="">团队单位完成的体验设计方案，研究了医院排队现状，针对复诊排队混乱、规则缺失问题，结合智能硬件提出了优化方向。
+			</p>
+
+
+
+			<figure id="99378b70-334f-4236-bd2d-81cb86dc0af0" class="image"><a
+					href="project6/img.png"><img
+						style="width:100%"
+						src="project6/img.png" /></a>
+			</figure>
+			<figure id="33bcea64-b399-4705-b39b-148c03cac367" class="image"><a
+					href="project6/img1.png"><img
+						style="width:100%"
+						src="project6/img1.png" /></a>
+			</figure>
+			<p id="269e5864-a0ea-4c0a-a25a-016ba8c87128" class="">
+			</p>
+			<p id="e2072fe3-68d8-4a4a-9c26-e690dcdf9592" class="">用户体验、以人为本、流程优化</p>
+			<p id="904fd110-fd75-4d6d-83ed-b377e55c8ca3" class="">
+			</p>
+
+			
+			<h2 id="02c98d26-227f-4d49-a27c-a9063e0e5f77" class="">成员分工</h2>
+			<figure id="22aadd0e-54f9-45cf-9ed2-7ca06bb15c1a" class="image"><a
+					href="project6/img2.png"><img
+						style="width:816px"
+						src="project6/img2.png" /></a>
+			</figure>
+			<h2 id="53e44841-2811-423e-b581-67f62037d379" class="">时长</h2>
+			<p id="aaaa9366-9d17-4c3a-be6e-9ea8a1815c1d" class="">2 个月（2020.10~2020.11）</p>
+			<h2 id="8569f7dd-049a-406f-891d-61b6eba3fd16" class="">项目成果</h2>
+			<figure id="244438af-393b-4866-abc7-50b4461f7402" class="image"><a
+					href="project6/img3.png"><img
+						style="width:864px"
+						src="project6/img3.png" /></a>
+			</figure>
+			<figure id="9fa60598-1c51-4a55-9678-ebbbf40c91ed" class="image"><a
+					href="project6/img4.png"><img
+						style="width:864px"
+						src="project6/img4.png" /></a>
+			</figure>
+			<figure id="5faae285-e7cb-4407-8b89-b50621b31bdf" class="image"><a
+					href="project6/img.001.png"><img
+						style="width:100%"
+						src="project6/img.001.png" /></a>
+			</figure>
+			<figure id="bcd2ae59-87c0-4f4f-933f-3b3f4f8ff0ae" class="image"><a
+					href="project6/img.002.png"><img
+						style="width:100%"
+						src="project6/img.002.png" /></a>
+			</figure>
+			<figure id="97ff637e-5d4a-4184-a886-fde930a95ee9" class="image"><a
+					href="project6/img.003.png"><img
+						style="width:100%"
+						src="project6/img.003.png" /></a>
+			</figure>
+			<figure id="eaa6f1fe-9abb-4572-8d1d-dd427b1ab5ce" class="image"><a
+					href="project6/img.004.png"><img
+						style="width:100%"
+						src="project6/img.004.png" /></a>
+			</figure>
+			<figure id="eb569f4b-d4b8-4e38-9a21-b45fcb623309" class="image"><a
+					href="project6/img5.png"><img
+						style="width:100%"
+						src="project6/img5.png" /></a>
+			</figure>
+			<figure id="2bd048d3-14dc-4b2e-b4b5-257bf9cffc61" class="image"><a
+					href="project6/img.005.png"><img
+						style="width:100%"
+						src="project6/img.005.png" /></a>
+			</figure>
+			<figure id="46a2fe98-7a36-494f-8b79-47966066751d" class="image"><a
+					href="project6/49.png"><img
+						style="width:100%"
+						src="project6/49.png" /></a>
+			</figure>
+			<figure id="a45bac8c-8f24-44c3-b863-ed840ed359ac" class="image"><a
+					href="project6/img.006.png"><img
+						style="width:100%"
+						src="project6/img.006.png" /></a>
+			</figure>
+			<figure id="d132fbb0-a85f-41da-9521-9f47ff8249b7" class="image"><a
+					href="project6/img.007.png"><img
+						style="width:100%"
+						src="project6/img.007.png" /></a>
+			</figure>
+			<figure id="6c23f249-4168-4524-9d42-661825ac3bdd" class="image"><a
+					href="project6/img.008.png"><img
+						style="width:100%"
+						src="project6/img.008.png" /></a>
+			</figure>
+			<p id="06cf3250-fedd-483f-8015-8ff2cc269438" class="">
+			</p>
+			<p id="bade9213-98bf-4362-a4ae-1f9ecc68e2bb" class="">
+			</p>
+
+
+			<h2 id="9feac34c-9b0b-4f44-8116-0008d445d50e" class="">状况跟进</h2>
+			<p id="81000977-20d1-435b-aea6-a1079f9c9813" class="">2021 年 9 月有机会再度回到医院，又有新的观察与思考：</p>
+			<ul id="8f93ecd2-30e8-46b8-b64f-2c697e668bbb" class="bulleted-list">
+				<li style="list-style-type:disc">复诊排队规则仍然缺失</li>
+			</ul>
+			<ul id="e584cff8-5209-4022-870a-c4292d77fa95" class="bulleted-list">
+				<li style="list-style-type:disc">没有被纳入排号系统的复诊病人，不得不提前、且寸步不离地守在诊室门口排队。自动叫号、给病人提供便利的电子叫号系统并没有照顾到这部分人。</li>
+			</ul>
+			<ul id="62b87ecf-0349-44ab-b6a2-2145b9f71254" class="bulleted-list">
+				<li style="list-style-type:disc">下午 6、7
+					点左右的就诊高峰，复诊病患因为上述原因在诊室前排起了长队，导致走道拥堵严重。而在急诊则常会看到有担架往来进出，着急奔走的病人家属也屡见不鲜，走道拥堵事情可大可小。</li>
+			</ul>
+			<ul id="dcd3a8ef-6714-4509-a0b1-061786c064e2" class="bulleted-list">
+				<li style="list-style-type:disc">
+					观察到对于复诊病患，资深一点的医生是这样处理的：主要依照系统给的初诊名单，但有意识地在其中穿插复诊接诊，一个初诊接着一个复诊这样轮着来。但或许因为分诊台护士并不知晓医生的用意，总是过早地开广播通知下一初诊病患就诊，此时复诊病人还没咨询完毕。也难怪在门口迫不及待的初诊病患总是会感到困惑——广播里叫的明明是我，为什么医生要先接诊其他病人？
+				</li>
+			</ul>
+			<ul id="9353574c-a3c8-4d2d-a650-ecb5e4c701e4" class="bulleted-list">
+				<li style="list-style-type:disc">
+					为尽量减少走廊堵塞，门前候诊病患一般是沿着走廊、而不是横跨走廊排队的，这导致病患观看门前设备屏幕的视角往往是倾斜的。这启示着：医院的相关设备屏幕应具有更广的可视角度，减少反光。</li>
+			</ul>
+			<h2 id="1347e84f-5979-4d00-b486-d75b20d7a970" class="">有哪些步骤</h2>
+			<p id="07416eba-fc6e-4ec3-b6a9-4c9530a89656" class="">点击跳转</p>
+			<nav id="657ffcee-91f6-4c8e-9237-546e882db32a" class="block-color-gray table_of_contents">
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#02c98d26-227f-4d49-a27c-a9063e0e5f77">成员分工</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#53e44841-2811-423e-b581-67f62037d379">时长</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#8569f7dd-049a-406f-891d-61b6eba3fd16">项目成果</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#9feac34c-9b0b-4f44-8116-0008d445d50e">状况跟进</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#1347e84f-5979-4d00-b486-d75b20d7a970">有哪些步骤</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#3f57ae92-8d3e-43da-b75a-6ab4c0d9359e">就医过程需求挖掘</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#1ea737a7-33b7-44a5-a3cf-859569a894f9">方向聚焦&amp;背景调研</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#a0ec896f-67c8-41ec-9e62-51354c5c2601">竞品调研</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#413945d6-cbea-4955-b1b4-0721be871697">实地考察</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#588bbb59-6d74-4d33-a94b-be148fddf7d4"><strong>用户访谈</strong></a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#6a9fbb37-cfa0-4438-9ea0-8f4a03de6e6c"><strong>问卷设计</strong></a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#a8d0fe92-ea48-4f36-8f8b-a43d827b5d53">用户画像提炼</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#55e23a94-ece2-482f-a267-2ea8a1fc68de">就医旅程地图梳理</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#fa5b8933-7628-454f-84e6-d2f94c699f0b">需求总结</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#c0cfb74a-010e-439c-8f55-2ae36bb321d7">技术调研及分析</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#378018dc-93ee-497f-86df-259754f56a00">医院标识标准</a></div>
+			</nav>
+			<p id="3b345b71-e4e3-42eb-b278-ad7eb825c5f2" class="">
+			</p>
+			<h2 id="3f57ae92-8d3e-43da-b75a-6ab4c0d9359e" class="">就医过程需求挖掘</h2>
+			<figure id="6fefdc4b-daeb-4b92-817b-bdcde5902251" class="image"><a
+					href="project6/img6.png"><img
+						style="width:6984px"
+						src="project6/img6.png" /></a>
+			</figure>
+			<p id="93e1fc30-53f2-41e2-8be3-d86f8c15ce14" class="">
+			</p>
+			<h2 id="1ea737a7-33b7-44a5-a3cf-859569a894f9" class="">方向聚焦&amp;背景调研</h2>
+			<figure id="495375bb-ae99-4268-a19d-1a5ba0f451ec" class="image"><a
+					href="project6/img7.png"><img
+						style="width:4432px"
+						src="project6/img7.png" /></a>
+			</figure>
+			<p id="67900bbe-474f-425f-bf40-6b2ec6b708e0" class="">
+			</p>
+			<h2 id="a0ec896f-67c8-41ec-9e62-51354c5c2601" class="">竞品调研</h2>
+			<figure id="57d6a40d-4e93-4551-af9f-e20f3454c887" class="image"><a
+					href="project6/img8.png"><img
+						style="width:4432px"
+						src="project6/img8.png" /></a>
+			</figure>
+			<p id="98ff1789-7f98-4496-bdf4-2fc9e7854552" class="">
+			</p>
+			<h2 id="413945d6-cbea-4955-b1b4-0721be871697" class="">实地考察</h2>
+			<p id="1b022d9a-fc95-4633-8e86-6ff13d09cb6b" class="">路线：排队区→候诊区→科室</p>
+			<figure id="be5ee0c2-c695-45ee-bf90-e6aa5ca1afe8" class="image"><a
+					href="project6/img9.png"><img
+						style="width:4432px"
+						src="project6/img9.png" /></a>
+			</figure>
+			<figure id="abc7a759-d6b5-47c3-9316-0a13e8c62a91" class="image"><a
+					href="project6/img10.png"><img
+						style="width:4436px"
+						src="project6/img10.png" /></a>
+			</figure>
+			<figure id="883a9510-fc89-44d0-b595-b965fc4f4838" class="image"><a
+					href="project6/img11.png"><img
+						style="width:4432px"
+						src="project6/img11.png" /></a>
+			</figure>
+			<p id="dcd9e803-df8a-429b-bdc9-e685c3644943" class="">
+			</p>
+			<h2 id="588bbb59-6d74-4d33-a94b-be148fddf7d4" class=""><strong>用户访谈</strong></h2>
+			<figure id="b938e81d-0373-4574-996c-a25117f906af" class="image"><a
+					href="project6/img12.png"><img
+						style="width:4000px"
+						src="project6/img12.png" /></a>
+			</figure>
+			<figure id="19a04f3e-6548-4c24-867b-cc5648597adb" class="image"><a
+					href="project6/img13.png"><img
+						style="width:4432px"
+						src="project6/img13.png" /></a>
+			</figure>
+			<figure id="7fe51407-fe29-4778-b974-f1a72fd938f1" class="image"><a
+					href="project6/img14.png"><img
+						style="width:4432px"
+						src="project6/img14.png" /></a>
+			</figure>
+			<p id="1ae7a7bc-6162-4739-a309-9e6c812e2747" class="">
+			</p>
+			<h2 id="6a9fbb37-cfa0-4438-9ea0-8f4a03de6e6c" class=""><strong>问卷设计</strong></h2>
+			<figure id="a786bfbc-2445-469e-9de8-8a8e59156efe" class="image"><a
+					href="project6/img15.png"><img
+						style="width:4000px"
+						src="project6/img15.png" /></a>
+			</figure>
+			<p id="07ac0237-3c02-4149-a8e2-5dee4a84f793" class="">（项目的定量研究部分专业性自觉仍有欠缺，内容量也较大，故此处暂略去问卷统计结果，多谢包涵）</p>
+			<p id="6c3a9bec-fc59-4d52-9134-666cf63bfe33" class="">
+			</p>
+			<h2 id="a8d0fe92-ea48-4f36-8f8b-a43d827b5d53" class="">用户画像提炼</h2>
+			<figure id="8bc62de2-5515-4836-8a08-6100b44716b2" class="image"><a
+					href="project6/img16.png"><img
+						style="width:4432px"
+						src="project6/img16.png" /></a>
+			</figure>
+			<p id="fb8c8059-5816-4576-8ea2-042262b692c9" class="">
+			</p>
+			<h2 id="55e23a94-ece2-482f-a267-2ea8a1fc68de" class="">就医旅程地图梳理</h2>
+			<figure id="9d1dc2db-60ae-43f6-9e35-782b3303dd47" class="image"><a
+					href="project6/img17.png"><img
+						style="width:4000px"
+						src="project6/img17.png" /></a>
+			</figure>
+			<p id="64e1cf1e-c4da-415d-a369-0365c7f13580" class="">
+			</p>
+			<h2 id="fa5b8933-7628-454f-84e6-d2f94c699f0b" class="">需求总结</h2>
+			<figure id="e3ab26c5-a387-497e-b5c7-fee6c610dc9e" class="image"><a
+					href="project6/111.png"><img
+						style="width:4000px"
+						src="project6/111.png" /></a>
+			</figure>
+			<figure id="46f5556b-4235-4db4-bb98-f7d2b68df6cb" class="image"><a
+					href="project6/img18.png"><img
+						style="width:4432px"
+						src="project6/img18.png" /></a>
+			</figure>
+			<p id="18a188a7-ea15-4d3c-a43b-1f72216d8817" class="">
+			</p>
+			<h2 id="c0cfb74a-010e-439c-8f55-2ae36bb321d7" class="">技术调研及分析</h2>
+			<p id="c340002d-9c2b-4d6f-a955-908e461123a6" class="">（左）复诊病人该什么时候取号？</p>
+			<p id="7f47e8d5-4aab-41d6-9cda-125271d80611" class="">（右）诊室如何保护病人隐私？</p>
+			<figure id="8ce53e53-713b-46a2-a7f7-d9aa1c74e7e1" class="image"><a
+					href="project6/img19.png"><img
+						style="width:4432px"
+						src="project6/img19.png" /></a>
+			</figure>
+			<p id="74c511a0-6c66-4e04-97df-ba95e3028b17" class="">
+			</p>
+			<p id="3ac52640-530e-4f2d-b00d-ebe156807b54" class="">技术原理及案例</p>
+			<figure id="8660d862-2535-4663-8609-a00960cbab8d" class="image"><a
+					href="project6/img20.png"><img
+						style="width:4432px"
+						src="project6/img20.png" /></a>
+			</figure>
+			<figure id="cdc15711-9be8-4c19-89a7-37103d6bf75c" class="image"><a
+					href="project6/img21.png"><img
+						style="width:4432px"
+						src="project6/img21.png" /></a>
+			</figure>
+			<p id="44a9775a-e2c5-482f-9300-51e00625b303" class="">
+			</p>
+			<h2 id="378018dc-93ee-497f-86df-259754f56a00" class="">医院标识标准</h2>
+			<figure id="9fd9a3c1-c689-4764-b100-a56ea3d08cb7" class="image"><a
+					href="project6/img22.png"><img
+						style="width:4000px"
+						src="project6/img22.png" /></a>
+			</figure>
+			<p id="926589b3-baac-4004-99b8-eec37f71e19a" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>
