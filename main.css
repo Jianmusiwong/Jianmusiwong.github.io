@@ -419,8 +419,8 @@ color: rgb(0, 0, 0);
 
 
 .image {
-	margin-top: 10px;
-  margin-bottom: 10px;
+	margin-top: 20px;
+  margin-bottom: 20px;
   border-radius: 0;
   text-align: center;
 }
@@ -454,6 +454,9 @@ figure {
 .red-font {
 	color:#e35c59
 }
+.orange-font {
+	color:#f06e26
+}
 .gray-font {
   color: gray;
 }
@@ -461,7 +464,9 @@ figure {
 .white-font {
   color: white;
 }
-
+.blue-font {
+	color: #4fc69b;
+}
 .blue-background {
 	background-color: #4fc69b
 }
@@ -470,5 +475,12 @@ figure {
 }
 .black-background {
 	background-color: black;
+}
+.white-background {
+	background-color: white;
+}
+
+.orange-background {
+	background-color: #f06e26
 }
 /* 颜色样式 */
