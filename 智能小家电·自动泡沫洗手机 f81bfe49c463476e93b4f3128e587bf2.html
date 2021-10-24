@@ -1,0 +1,1219 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>智能小家电·自动泡沫洗手机</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			text-indent: -1.7em;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(145, 145, 142, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(187, 132, 108, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(215, 129, 58, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 148, 51, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(108, 155, 125, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(91, 151, 189, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(167, 130, 195, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(205, 116, 159, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(225, 111, 100, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(145, 145, 142, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(187, 132, 108, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(215, 129, 58, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 148, 51, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(108, 155, 125, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(91, 151, 189, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(167, 130, 195, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(205, 116, 159, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(225, 111, 100, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="5ec611ce-19b3-4183-aa22-8bac689c496f" class="page sans">
+		<header>
+			<h1 class="page-title">智能小家电·自动泡沫洗手机</h1>
+		</header>
+		<div class="page-body">
+			<p id="4c83987d-bee4-455d-a170-1167f4ed368e" class="">本科概念项目，围绕自动泡沫洗手机品类，研究市面竞品，挖掘用户需求，给既有品类找到创新发展方向</p>
+			<figure id="f81bfe49-c463-476e-93b4-f3128e587bf2" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled.png"><img
+						style="width:3000px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled.png" /></a>
+			</figure>
+			<p id="4f6b6518-10c1-43d3-9c1d-346e12e486e2" class="">
+			</p>
+			<p id="b0fc948d-e7f6-4da8-906a-49c207ca2fa8" class="">
+			</p>
+			<figure id="22422680-c2dd-4c54-9071-2f5b52b820e5" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%201.png"><img
+						style="width:816px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%201.png" /></a>
+			</figure>
+			<p id="93b2c852-098e-4717-862f-c155a273c8ca" class="">智能家居、竞品研究、ID 设计、营销策略</p>
+			<h2 id="6092316e-ec63-474a-8a67-79d08fc9ca66" class="">时长</h2>
+			<p id="db89188c-8160-4696-827c-4b845d687cd6" class="">2 个月（2019.09~2019.10）</p>
+			<h2 id="7ebcf739-7228-45db-937d-e27ae66302b0" class="">我的工作是什么</h2>
+			<p id="72abaef4-ecce-467b-9b37-40c011a6a62a" class="">
+				在这个半合作半独立项目中，我全程参与了以下的硬件开发设计流程。前期我作为小组长，牵头组织组员们合作开展市场调研、用户研究；课题后期则由每人独自完成各自产品方案，小组内部相互围绕方案给予反馈。</p>
+			<h2 id="00395026-63f3-4685-93bf-673b7a8846ca" class="">有哪些步骤</h2>
+			<div id="a7d7c9d4-b860-4ce6-86d5-fa17c7701b08" class="column-list">
+				<div id="1a2315f2-ec6c-4825-8a49-55969c64be07" style="width:33.333333333333336%" class="column">
+					<p id="52815f38-65d6-465e-ae15-e6514140cc05" class=""><strong>调研</strong></p>
+					<p id="11eedd8a-b143-4197-b56c-10ef597ad014" class="">市场调研</p>
+					<p id="d40398a9-a0c0-4695-b044-2f714d964959" class="">用户研究</p>
+					<p id="90ddadf4-4303-4318-81dc-123bece52637" class="">使用体验</p>
+				</div>
+				<div id="9579d24d-da47-450b-ac89-25468e0838fc" style="width:33.333333333333336%" class="column">
+					<p id="5af38666-82ea-4fd9-9d65-c3e71b95522c" class=""><strong>策划</strong></p>
+					<p id="a1183f2f-483c-481d-bff7-190b3bd1c78d" class="">产品定位</p>
+					<p id="48869dcb-fd75-4ab5-9c04-c287f1276d67" class="">产品线规划</p>
+					<p id="efa36035-c84c-46c9-babd-3c2f5902c02d" class="">技术路线</p>
+				</div>
+				<div id="7dd5d858-329b-4c19-8c0d-0e0df28ed1d0" style="width:33.33333333333333%" class="column">
+					<p id="ca40006f-966b-48c1-a90d-3b2a387831b7" class=""><strong>设计</strong></p>
+					<p id="370414fb-3840-42bd-8340-c505dfdca440" class="">外观设计</p>
+					<p id="78516533-dbc0-4ff4-aba9-8fc473d51b30" class="">结构设计</p>
+					<p id="d1095700-d5a2-4f85-ade3-282fc4aeb51d" class="">
+					</p>
+				</div>
+			</div>
+			<h2 id="6d535165-b291-406a-abdd-9f66d27483bc" class="">产出简介</h2>
+			<p id="58f1bd3c-db11-471b-9f0c-637659007d3d" class="">
+				这是一个以“双效洗手液，给予肌肤双重呵护”为特色的自动泡沫洗手机，主要面向有化妆习惯、注重肌肤健康的年轻女性。产品特色：</p>
+			<ol type="1" id="7ae2bb22-d9a9-4ae7-806b-915d7df793c9" class="numbered-list" start="1">
+				<li><strong>双效洗手液</strong>
+					<p id="b4acef30-a4cf-484e-abcc-23605da79cfc" class="">
+						洗手机配备两种效果的洗手泡沫。第一重——上妆卸妆前强效灭菌净手；第二重——去除灭菌成分残留、减少对脸部肌肤刺激，保湿护手。</p>
+				</li>
+			</ol>
+			<ol type="1" id="b52cfbb8-6581-49fd-b3d9-5fef1d12c977" class="numbered-list" start="2">
+				<li><strong>洗手洗两次</strong>
+					<p id="ba3ea4cb-379a-4ff6-8eaf-328de776d5a1" class="">研究表明，洗手时间只要适当延长到至少
+						15s，即使只用清水不用洗手液，也可以去除大部分手部细菌；但在情境观察中发现人们洗手平均时间仅为 6.3s，时长不达标，此时手部残留的细菌在洁面时将造成更多肌肤问题。</p>
+					<p id="95e69823-d457-4e5b-a822-fb2a64c3e964" class="">
+						故提出“洗手洗两次”的概念，借用户对于容貌的关切心理，帮助延长洗手时间，从而减少手部细菌，进而减少由手引起的面部肌肤问题。</p>
+					<p id="8a6ca41f-51de-43a2-a2c8-b69e936c1b09" class="">
+					</p>
+				</li>
+			</ol>
+			<h2 id="3e9ed31c-5765-4112-a26c-1676deb22afe" class="">我是如何应对挑战的</h2>
+			<p id="f4c4a463-5176-47e5-98f9-25fd6315ae4f" class=""><strong>调研竞品阶段</strong></p>
+			<p id="c2d6589d-5174-4ef0-89aa-50f91520bb89" class="">
+				发现各组员分工收集记录的竞品资料格式不一，有的详细有的简单零碎。为确保资料整合便利、竞品信息获取齐全，我预调研了一些竞品后梳理出一竞品信息收集表格，与组员商讨确认过后发给组员，推动团队有秩序地有目标地分头行动。
+			</p>
+			<p id="a4570bcf-d51c-4325-a2ac-624538ffe4cc" class=""><strong>分析竞品阶段</strong></p>
+			<p id="19bfeb0d-28e1-4ccd-b10e-64f40bc75d7f" class="">我作为主要整理分析角色之一，就产品定位问题发现了新机遇。在对市面上共计32
+				款自动洗手机进行了调查后，我发现洗手机这一品类当前的产品定位颇为简单：无非是全家通用型、童趣型、公共空间型、医护场景型。作为主流款式的“全家通用型”洗手机也存在着“功能同质化”的问题：只要外形、价钱过得去，选哪一家感觉都差不多，缺少差异，差一个让消费者兴奋的产品亮点。故我主动围绕较为主流的日常居家场景，梳理出各类家庭成员的洗手旅程并共享给组员参考，以期大家相互启发、找到更有新意的产品定位。
+			</p>
+			<p id="5479114a-0cb9-4a2b-ab22-647f41c94e97" class=""><strong>产品定位阶段</strong></p>
+			<p id="73124575-b4f2-4f53-9a4b-0174218c51d4" class="">
+				虽意识到“美容小家电”是一个潜在的发展方向，但我缺乏女性视角、也不熟悉美容家电的定位和设计细节。于是我独立围绕美容小家电展开调研，整理出了美容小家电的主要产品类别、主要卖点、常用形态、CMF特点等有用资料，在之后的个人洗手机方案中更加得心应手。此外还联系了身边女性亲友，进一步验证了桌面调研所得，采集到目标用户更细腻的需求、使用习惯（如上妆、卸妆的步骤及常用美妆用品等）。
+			</p>
+			<h2 id="e80b4a7b-fa27-4e8f-9cb0-c0c4cf861862" class="">我收获了什么</h2>
+			<p id="e81b78d3-5755-4970-8464-1f7191554dd1" class="">这个项目给我提供了第一次与企业近距离交流、打磨产品的机会，对当时的我来说收获颇丰。</p>
+			<p id="1198ba6b-13b0-4874-8015-ae87a5dc83af" class="">
+				项目过程中去对比与老总、设计总监、课堂老师的谈话是十分有意思的——他们的关注视角、他们的洞察，都随着其位置而有所不同。在企业老总告诉你“要开辟新赛道”、“要洞察消费趋势”的同时，始终心怀教学大纲的老师会时不时地会把你从宏观大局拽回现实——提醒你“作为学生打基础阶段要明确学习路径”、“按部就班平均发力”、“注重落地”。这提醒我：要把事物看得全面透彻，不仅仅要做到“兼听”——与各利益方深入交谈；还应抓住机会、主动创造机会把自己放在不同位置，获得不同的视野和感受。（这些都是可参考的实践路径：多体验新产品、去当义工去参加展会变换自己生活里的角色、去大胆尝试你以往习惯于
+				say no OR hell no! 的选项... ...）</p>
+			<p id="324bfcd8-1c0f-42d8-a769-4efbd1b6b9b5" class="">控制生产成本方面，还有很多没能解答的难题。
+				如：本方案洗手机玻璃瓶身“上下有螺纹开口”的形态显然让生产工艺更复杂了，玻璃材质是否能实现这样的形态？选用玻璃材质是否会带来高昂的生产加工成本？换成塑料是否能达到相似的效果？这些与实际生产息息相关的问题都悬而未决，是我当前欠缺、需要在行业中潜心学习的。
+			</p>
+			<p id="da780048-1b0d-4eb1-85c7-faaeee155537" class="">
+				产品定位方面欠缺实战经验，大胆设想还有待在真实市场中得到验证。方案中定位到“美容小家电”这一步虽被企业和老师反馈说有亮点，也有一定的文献资料作支撑，但我在把“洗手机”、“女性”、“美容小家电”这几点联系起来时还是会感到没底、自觉天马行空，但又欠缺方法来开展有效的小规模测试来验证猜想、降低不确定。期望能在行业中得到锻炼学习、找到答案。
+			</p>
+			<h2 id="b37a2c89-01b7-4aaf-98d7-2f5284d36711" class="">有什么成绩</h2>
+			<p id="3c798c2c-0f5d-430a-8b0d-3b3dc6ca542b" class="">这是一个深圳大学与深圳东象设计公司共同开展的校企合作项目。整门课 60
+				余名学生中，最终选择由公司老总、设计总监、授课老师在课题结束时共同选出 3 件最佳作品，由企业资助制作3D打印产品手板。而最终 3 件最佳作品中的 2 件，都落在我的小组里，而我的作品是其中一件。</p>
+			<p id="e5ab632e-da59-4141-aa8c-604a0b2a966f" class="">课业成绩：A+</p>
+			<h2 id="d123299b-7bb1-466f-af4d-ce48298d750f" class="">详细分析过程</h2>
+
+
+			<nav id="026ea701-286f-4fe8-a29d-aa40ed2aefbf" class="block-color-gray table_of_contents">
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#6092316e-ec63-474a-8a67-79d08fc9ca66">时长</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#7ebcf739-7228-45db-937d-e27ae66302b0">我的工作是什么</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#00395026-63f3-4685-93bf-673b7a8846ca">有哪些步骤</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#6d535165-b291-406a-abdd-9f66d27483bc">产出简介</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#3e9ed31c-5765-4112-a26c-1676deb22afe">我是如何应对挑战的</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#e80b4a7b-fa27-4e8f-9cb0-c0c4cf861862">我收获了什么</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#b37a2c89-01b7-4aaf-98d7-2f5284d36711">有什么成绩</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#d123299b-7bb1-466f-af4d-ce48298d750f">详细分析过程</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#8eccb6b0-0038-4cff-944f-496c6d911b33">一、竞品分析</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#4210f492-e068-4f5a-acdb-03e2f193d899">二、品类调研：美容小家电</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#877ca6b2-be4d-4348-97ee-3e097296da10">三、用户研究</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#4c0ac66b-1a23-43b3-b635-0c7283d8d8e5">四、产品定位</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#21b3fdde-5d3a-426e-a121-69e22e593291">五、技术路线</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#c7933ca5-034f-446d-be80-143c9f597c93">六、工业设计</a></div>
+				<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link"
+						href="#0aeddcd7-1356-4522-9a42-d8bf0e255e57">七、营销策略</a></div>
+			</nav>
+
+			
+			<h2 id="8eccb6b0-0038-4cff-944f-496c6d911b33" class="">一、竞品分析</h2>
+			<p id="7f2106c7-35ff-45e0-9ccd-09390c65207b" class="">
+				项目之初，为尽快上手熟悉该品类的设计方法、明确产品的市场定位，我组织组员在电商平台及品牌官网上收集竞品资料，并制作了信息收集表格以加速信息收集，方便信息整理。最后汇总整理如下：</p>
+			<p id="f1fe2aba-9d6d-46c3-8175-69585f753ef5" class="">
+			</p>
+			<figure id="297bf39e-86c3-4b3e-8985-f2d4358cafbc" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%202.png"><img
+						style="width:100%"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%202.png" /></a>
+			</figure>
+			<p id="a90438bb-788a-4da6-a9a2-ef0bff70c445" class="">
+			</p>
+			<p id="d449250b-f034-4bb9-96f3-216f8936b0b2" class="">而后筛选出 5 类最具代表性的产品，并提取出材质、形态、色彩方案、容量、整体尺寸等可供后续设计参考的数据。
+			</p>
+			<figure id="6c20eaf8-1967-4461-9d8f-faf257e03160" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%203.png"><img
+						style="width:816px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%203.png" /></a>
+			</figure>
+			<figure id="df01bc48-39d4-4195-b174-7bb2cfb1149d" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%204.png"><img
+						style="width:816px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%204.png" /></a>
+			</figure>
+			<p id="7f16f21f-154a-46a4-bbf2-929dd96c2b7f" class="">
+			</p>
+			<p id="bceabec1-b869-4fe1-a99e-6799d2532d48" class="">
+			</p>
+			<p id="60f2e35d-51ba-47fd-9fa9-00f9833542c4" class="">
+			</p>
+			<p id="b8ee1d1a-c628-4524-9399-052663fbe288" class="">
+			</p>
+			<figure id="28b51e98-a199-48d3-8f16-6a74d941d7fd" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%205.png"><img
+						style="width:1152px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%205.png" /></a>
+			</figure>
+			<p id="0395d277-7c2e-4988-bb4c-4796777106c9" class="">
+			</p>
+			<p id="a17804f4-ddfc-4659-8ee7-433229fcab61" class="">到实体店体验产品，并买来竞品实物进行拆解研究，了解其内部功能部件，总结如下：</p>
+			<p id="19b8dc1f-bc06-42d0-afc7-f41040558b61" class="">
+			</p>
+			<figure id="0cd66693-8429-4cc2-82b2-f6dcad50e31c" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%206.png"><img
+						style="width:816px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%206.png" /></a>
+			</figure>
+			<p id="45ee4c90-7763-40f0-a3cd-e037b6630922" class="">
+			</p>
+			<figure id="db96786e-2702-4c16-9143-33215fe475d9" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%207.png"><img
+						style="width:816px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%207.png" /></a>
+			</figure>
+			<p id="2b744b40-1f35-4da2-a47e-ff022bcbba73" class="">
+			</p>
+			<p id="bf3a8d1f-58f6-444e-8fb2-81820f5878b7" class="">
+			</p>
+			<p id="4d452dd4-c1f7-4fb0-bfe9-b9c9e45bc0b0" class="">
+			</p>
+			<h2 id="4210f492-e068-4f5a-acdb-03e2f193d899" class="">二、品类调研：美容小家电</h2>
+			<p id="524b067c-09a5-49a7-966d-8846d19101f8" class="">
+				我作为竞品分析主要整理分析角色之一，发现当前产品定位颇为简单，主流款式的“全家通用型”洗手机也存在着“功能同质化”的问题。于是调研了当下消费趋势，并在梳理了各类家庭成员的洗手旅程后，最终确定下以“美容小家电”作为发展方向。
+			</p>
+			<p id="fa6a0eb6-8723-4ef5-8a1f-54a5926bb69b" class="">
+			</p>
+			<figure id="6c9f3928-ee11-4f00-af68-8fcfa7aca809" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%208.png"><img
+						style="width:816px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%208.png" /></a>
+			</figure>
+			<p id="09be0adf-b772-4b9c-989c-f78dfd02dab2" class="">
+			</p>
+			<p id="808ae14d-2995-46f8-afd0-a46bdd2c8209" class="">
+			</p>
+			<p id="14f877ae-8c0d-4f14-89a3-7c7d93a34075" class="">
+				由于意识到自己缺乏女性视角、也不熟悉美容家电的定位和设计细节，于是着手围绕美容小家电展开调研。最终整理出了美容小家电的主要产品类别、主要卖点、常用形态、CMF特点等有用资料，在之后的个人洗手机方案中更加得心应手。
+			</p>
+			<p id="fa78ec6d-ba4a-4f75-9b6e-ed0eb11fd369" class="">
+			</p>
+			<p id="df0fe605-ce74-403d-8548-2b7e6cb1b55f" class="">
+			</p>
+			<figure id="c1beda75-5dc2-4439-8ffd-276092fd6fcf" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%209.png"><img
+						style="width:816px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%209.png" /></a>
+			</figure>
+			<p id="b3fab332-8b68-401a-ab7d-3d9d588601a5" class="">
+			</p>
+			<p id="a53e253a-b0c7-481d-b5b7-744ae3ac0095" class="">
+			</p>
+			<figure id="a406f605-8e0e-4d74-9ca8-3ef5f072c4ac" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2010.png"><img
+						style="width:816px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2010.png" /></a>
+			</figure>
+			<p id="306e5711-c1e0-4f34-90ec-bc2916b12bcd" class="">
+			</p>
+			<p id="0048c964-93fc-4830-a2f2-56191bee7199" class="">
+			</p>
+			<h2 id="877ca6b2-be4d-4348-97ee-3e097296da10" class="">三、用户研究</h2>
+			<p id="887d45e9-0e94-4245-8b32-1b25967bb968" class="">
+				和美容护肤相关的洗手机终究是洗手机，对洗手行为的研究是基础，于是开展用户研究并总结出民众普遍的洗手习惯及当前洗手机的使用体验，总结如下：</p>
+			<p id="1852db80-da03-4cbd-8615-9213cb9ed65b" class="">
+			</p>
+			<figure id="57be0f2d-3774-4e64-a81c-e92ef859198e" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2011.png"><img
+						style="width:816px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2011.png" /></a>
+			</figure>
+			<p id="daa76bf1-3ea5-4018-8252-d50674e81a40" class="">
+			</p>
+			<figure id="907f6ff9-7f1a-4884-b90f-e1332eac1e99" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2012.png"><img
+						style="width:816px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2012.png" /></a>
+			</figure>
+			<p id="0111eab2-d9c5-48ef-845f-bb9878060d88" class="">
+			</p>
+			<p id="d2b3cb7a-06ab-4f1a-ad49-7aef71ea1303" class="">
+			</p>
+			<p id="adb2bce1-34c9-458e-a9aa-fc9da41e6f1b" class="">按照需求迫切程度、多大程度影响购买决策，将需求分层如下：</p>
+			<figure id="931680d0-d4f1-448f-adcf-25b1c8e253f5" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2013.png"><img
+						style="width:816px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2013.png" /></a>
+			</figure>
+			<p id="b1a11ca4-5e8f-4d76-b8e9-a68d244ebb07" class="">
+			</p>
+			<p id="e5e84dc3-86ca-47a5-b637-31fdda57ce20" class="">综合了用户体验、商业价值、实现难度等方面考虑，团队讨论筛选后提炼出 4 点最主要的设计指引：</p>
+			<figure id="62dec0d3-6241-4127-a452-b73e287a3488" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2014.png"><img
+						style="width:3508px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2014.png" /></a>
+			</figure>
+			<p id="1715e587-d0c3-41c5-b056-99dc40b73f22" class="">
+			</p>
+			<p id="0e93a295-405e-432b-841a-6f9120903c6c" class="">
+				为了让“美容小家电”的定位更加站得住脚，在对普遍洗手行为的基础上还要围绕美容护理过程中的手部清洁展开用户研究，以求产品能真正响应用户之需。在桌面调研以外，还联系了身边女性亲友，采集到目标用户更细腻的需求、使用习惯（如上妆、卸妆的步骤及常用美妆用品等）：
+			</p>
+			<p id="7f0de72a-461e-4911-a7de-8069766c0cf6" class="">
+			</p>
+			<figure id="1bf4cf6e-ce25-4925-82d6-c4c3c63c0cd2" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2015.png"><img
+						style="width:816px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2015.png" /></a>
+			</figure>
+			<p id="bd8e692a-746b-488a-8c4d-fc107f122351" class="">
+			</p>
+			<p id="3dd69d4c-d5f8-4a59-a04b-16b89fc32c33" class="">
+			</p>
+			<figure id="8849b807-af23-40a0-b8e2-0523126fe8d4" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2016.png"><img
+						style="width:720px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2016.png" /></a>
+			</figure>
+			<figure id="b97dfaa2-520c-46b0-81ec-3b76661e13f8" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2017.png"><img
+						style="width:576px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2017.png" /></a>
+			</figure>
+			<h2 id="4c0ac66b-1a23-43b3-b635-0c7283d8d8e5" class="">四、产品定位</h2>
+			<p id="4ace5f86-1c06-49b0-8484-2b5f439e264c" class="">产品最终定位为，以有化妆习惯、注重肌肤健康的年轻女性为主要用户的美容小家电，围绕定位提出产品特色：
+			<div class="indented">
+				<ol type="1" id="02a74348-3b48-4797-bf2f-a2c5419aada5" class="numbered-list" start="1">
+					<li>双效洗手液：洗手机配备两种效果的洗手泡沫。第一重——上妆卸妆前强效灭菌净手；第二重——去除灭菌成分残留、减少对脸部肌肤刺激，保湿护手。</li>
+				</ol>
+				<ol type="1" id="2cf73358-2d1e-4919-a1a4-816c60cfe1a6" class="numbered-list" start="2">
+					<li>洗手洗两次：<p id="bad38e6c-a002-4d1c-88ac-fc96de87bdc0" class="">研究表明，洗手时间只要适当延长到至少
+							15s，即使只用清水不用洗手液，也可以去除大部分手部细菌；但在情境观察中发现人们洗手平均时间仅为 6.3s，时长不达标，此时手部残留的细菌在洁面时将造成更多肌肤问题。</p>
+						<p id="90f722c2-169f-484f-9a02-da3ee8f21529" class="">
+							故提出“洗手洗两次”的概念，借用户对于容貌的关切心理，帮助延长洗手时间，从而减少手部细菌，进而减少由手引起的面部肌肤问题。</p>
+						<p id="83521dc3-7007-4369-805b-2390d73c3ab7" class="">
+						</p>
+					</li>
+				</ol>
+			</div>
+			</p>
+			<figure id="828958b3-f204-4986-bfb9-64ac02944ce6" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2018.png"><img
+						style="width:3508px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2018.png" /></a>
+			</figure>
+			<p id="457dab49-1d33-474a-8dd4-455f8c84647d" class="">
+			</p>
+			<p id="de71bf8a-51f8-48fb-be1b-cad58c309c58" class="">【笔者所想】</p>
+			<p id="56bbc8ec-7838-4f53-8a34-737a6e115cd3" class="">
+				推进过程中对此有过纠结的感觉——是否要为了“洗手洗两次”、“用双重洗手液”的概念而增加产品结构复杂性（两个分隔开的洗手液存储槽）？</p>
+			<p id="b847ecdc-cc15-4941-8058-7d75cfd2d509" class="">
+				两难的地方在于，若不提供两种洗手液、仅使用同种洗手液洗两次，用户会产生怀疑“第二次洗手和第一次没啥区别吧？”，用户坚持不下去、恢复为只洗一次，双重洗手的产品亮点自然就不成立了，“我买这个洗手机有何意义呢，自己主动洗两次不就得了？”由此可见两种洗手液的存在是与双重洗手概念强强绑定的。问题此时就转变为，要找到一种合理、成本可接受的容器结构，这对机械、结构知识有一定要求。
+			</p>
+			<p id="2a11d483-64e2-4ba9-9c0b-246197b2ad3d" class="">
+				现在看来当时的我确是有学生心理的，在产品亮点和落地性间，为了作业最终效果选择了保有产品亮点（尽管它实际上根基不稳、理想化）。若投入更多时间去了解和验证结构，选用部件时多加斟酌，我或许可以做得更好，还需继续修炼啊。
+			</p>
+			<p id="0a90b3c9-c67d-4c02-928c-1ecc585ade09" class="">
+			</p>
+			<h2 id="21b3fdde-5d3a-426e-a121-69e22e593291" class="">五、技术路线</h2>
+			<p id="97e29bea-1a0d-4ba2-948c-279749f7d45b" class="">在对洗手机和美容小家电的技术调研后，定义了产品方案主要部件的规格：</p>
+			<p id="4bc3262a-1032-4633-9104-29eb9686788a" class="">
+			</p>
+			<figure id="dc640d1b-127d-4272-acd3-726b5b0f43cd" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2019.png"><img
+						style="width:3508px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2019.png" /></a>
+			</figure>
+			<p id="4ea8b1a8-18d4-4057-a368-6f872142e0d8" class="">
+			</p>
+			<figure id="22dd2a96-aea6-46d4-bfb9-26e1e49ab46a" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2020.png"><img
+						style="width:3508px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2020.png" /></a>
+			</figure>
+			<p id="d84c9e6c-5bb4-40bb-8aab-904522109db4" class="">
+			</p>
+			<figure id="4c1d877f-ff91-4302-8de5-5514e99021e3" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2021.png"><img
+						style="width:288px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2021.png" /></a>
+				<figcaption>储液结构（侧视）</figcaption>
+			</figure>
+			<p id="303a8beb-fce9-4c8f-8f32-2e028cf97ee8" class="">
+			</p>
+			<h2 id="c7933ca5-034f-446d-be80-143c9f597c93" class="">六、工业设计</h2>
+			<p id="4254aead-ba02-4e12-8dcf-e75ca33fdb5d" class="">总结出工业设计层面的设计方向：</p>
+			<p id="1379bef0-1f81-4e97-bdd8-9930f8430b13" class="">
+			</p>
+			<figure id="fda7a257-541b-4614-8452-96c3092fd6d9" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2022.png"><img
+						style="width:816px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2022.png" /></a>
+			</figure>
+			<p id="9f05ce4a-e4c5-401c-af7e-105b8eb49bf5" class="">
+			</p>
+			<p id="b10b7f3a-b40d-4acc-bb0e-a9f351feb2ea" class="">
+			</p>
+			<p id="8ab350e1-39fb-40e9-9ae5-700f9ccf4fcb" class="">
+			</p>
+			<p id="16a85e4e-be4d-432c-8b95-bcc79e77c1c3" class="">外观设计上经历了过两次迭代，前两版形态：</p>
+			<figure id="7833dd41-5382-4e85-b354-f9f2f3bc1926" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2023.png"><img
+						style="width:7824px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2023.png" /></a>
+			</figure>
+			<p id="482b4f7b-4f71-49a0-bc1d-5f7b1c6377a6" class="">
+			</p>
+			<p id="2fd4b91a-7fed-4fce-ba07-bb4d2d43d8aa" class="">
+			</p>
+			<p id="ac5950c4-d0b6-4a75-baba-82c7974c5e52" class="">
+			</p>
+			<p id="44f4c114-78b0-4e10-ae06-5f76ea78a600" class="">
+			</p>
+			<p id="d493bd5a-bb1a-4c8e-9ce5-51e7ea36fb87" class="">
+			</p>
+			<p id="bd3084fe-c005-451e-9e9e-3646627ea89d" class="">最终在裙摆造型、色彩方案、磨砂质感的基础上为了进一步展现女性气质，引入了对马蹄莲的仿生设计语言，产出最终
+				ID 设计方案：</p>
+			<figure id="882f73cb-accd-4e7a-b552-b96248451b79" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2024.png"><img
+						style="width:3000px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2024.png" /></a>
+			</figure>
+			<figure id="e9a87dd5-d8cb-4a77-9109-11c232491163" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2025.png"><img
+						style="width:1536px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2025.png" /></a>
+			</figure>
+			<p id="a6412952-cc32-4bef-9d95-7071936fa7f8" class="">
+			</p>
+			<p id="b0576ab3-35e6-47de-b317-25029ee5f61d" class="">
+			</p>
+			<p id="60649d9e-fbed-4e12-9e05-34925ca8a9a7" class="">其他配色方案</p>
+			<div id="909cd3f1-716a-44b6-bbdf-54b0e822c581" class="column-list">
+				<div id="2b701481-a184-4d55-87d5-7539b191689a" style="width:50%" class="column">
+					<figure id="c79a68e9-c414-46cb-9feb-5d23b28ad398" class="image"><a
+							href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2026.png"><img
+								style="width:1920px"
+								src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2026.png" /></a>
+					</figure>
+				</div>
+				<div id="d412fb4d-e5c6-4548-90a5-f0c1f83319a4" style="width:50%" class="column">
+					<figure id="681564f5-4476-4bf8-82a7-1b2aa14102f6" class="image"><a
+							href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2027.png"><img
+								style="width:1920px"
+								src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2027.png" /></a>
+					</figure>
+				</div>
+			</div>
+			<figure id="9e4e6701-79bb-4a52-b816-2128044abe9b" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2028.png"><img
+						style="width:1920px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2028.png" /></a>
+			</figure>
+			<p id="68178887-9027-4c0e-a411-9de964793754" class="">
+			</p>
+			<p id="128b7048-66d2-4d12-9c21-4abfc9528056" class="">
+			</p>
+			<h2 id="0aeddcd7-1356-4522-9a42-d8bf0e255e57" class="">七、营销策略</h2>
+			<p id="59d4425e-3132-425f-b26b-c6f17322b256" class="">产品的定位、外观、营销侧重点都是环环相扣的，为使产品的理念更完整地传达诠释，就营销策略取向给出建议：</p>
+			<figure id="25a083a4-9d00-458e-a91d-d356c963c0a8" class="image"><a
+					href="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2029.png"><img
+						style="width:816px"
+						src="%E6%99%BA%E8%83%BD%E5%B0%8F%E5%AE%B6%E7%94%B5%C2%B7%E8%87%AA%E5%8A%A8%E6%B3%A1%E6%B2%AB%E6%B4%97%E6%89%8B%E6%9C%BA%20f81bfe49c463476e93b4f3128e587bf2/Untitled%2029.png" /></a>
+			</figure>
+			<p id="c3411786-1e23-462d-b3d5-8a5388f2b3c4" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>
